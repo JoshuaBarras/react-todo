@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Todo from './Todo';
 import TodoForm from './TodoForm';
 
 const TodoList = () => {
@@ -14,10 +15,25 @@ const TodoList = () => {
     setTodos(newTodos);
   };
 
+  const completeTodo = id => {
+    const updatedTodos = todos.map(todo => {
+      if (todo.id === id) {
+        // eslint-disable-next-line no-param-reassign
+        todo.isComplete = !todo.isComplete;
+      }
+      return todo;
+    });
+    setTodos(updatedTodos);
+  };
+
   return (
     <div>
       <h1>What&apos;s the Plan for Today?</h1>
       <TodoForm onSubmit={addTodo} />
+      <Todo
+        todos={todos}
+        completeTodo={completeTodo}
+      />
     </div>
   );
 };
