@@ -1,8 +1,8 @@
-/* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react';
 import { RiCloseCircleLine } from 'react-icons/ri';
 import { TiEdit } from 'react-icons/ti';
 import PropTypes from 'prop-types';
+import uuid from 'react-uuid';
 import TodoForm from './TodoForm';
 
 const Todo = ({
@@ -25,11 +25,11 @@ const Todo = ({
     return <TodoForm edit={edit} onSubmit={submitUpdate} />;
   }
 
-  return todos.map((todo, index) => (
+  return todos.map(todo => (
     <div
       className={todo.isComplete ? 'todo-row complete'
         : 'todo-row'}
-      key={index}
+      key={uuid()}
     >
 
       <div role="presentation" key={todo.id} onKeyPress={() => completeTodo(todo.id)} onClick={() => completeTodo(todo.id)}>

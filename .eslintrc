@@ -35,6 +35,7 @@
                 "unnecessary": true,
                 "numbers": false
             }
-        ]
+        ],
+        "no-param-reassign": "off"
     }
 }

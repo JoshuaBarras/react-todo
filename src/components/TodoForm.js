@@ -27,7 +27,7 @@ const TodoForm = props => {
 
   return (
     <form onSubmit={handleSubmit} className="todo-form">
-      {edit ? (
+      {edit.id ? (
         <>
           <input
             placeholder="Update your item"
