@@ -9,14 +9,14 @@ const Todo = ({
   todos, completeTodo, removeTodo, updateTodo,
 }) => {
   const [edit, setEdit] = useState({
-    id: null,
+    id: '',
     value: '',
   });
 
   const submitUpdate = value => {
     updateTodo(edit.id, value);
     setEdit({
-      id: null,
+      id: '',
       value: '',
     });
   };
@@ -51,14 +51,17 @@ const Todo = ({
 };
 
 Todo.propTypes = {
-  todos: PropTypes.func,
+  todos: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string,
+    text: PropTypes.string,
+  })),
   completeTodo: PropTypes.func,
   removeTodo: PropTypes.func,
   updateTodo: PropTypes.func,
 };
 
 Todo.defaultProps = {
-  todos: () => {},
+  todos: [],
   completeTodo: () => {},
   removeTodo: () => {},
   updateTodo: () => {},

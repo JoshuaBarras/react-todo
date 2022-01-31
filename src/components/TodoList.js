@@ -6,6 +6,7 @@ const TodoList = () => {
   const [todos, setTodos] = useState([]);
 
   const addTodo = todo => {
+    // Trim whitespace from text box on input
     if (!todo.text || /^\s*$/.test(todo.text)) {
       return;
     }
@@ -16,6 +17,7 @@ const TodoList = () => {
   };
 
   const updateTodo = (todoId, newValue) => {
+    // Trim whitespace from text box on input
     if (!newValue.text || /^\s*$/.test(newValue.text)) {
       return;
     }
@@ -39,7 +41,6 @@ const TodoList = () => {
     });
     setTodos(updatedTodos);
   };
-
   return (
     <>
       <h1>What&apos;s the Plan for Today?</h1>
