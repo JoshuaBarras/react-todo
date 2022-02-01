@@ -31,3 +31,4 @@ Your app should now be running on [localhost:3000](http://localhost:3000/)
 
 Ideally when I have more time I'd like to:
 - [ ] Add unit testing
+- [ ] Add other tooling such as stylelint, prettier and others
