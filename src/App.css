@@ -136,8 +136,8 @@ h1 {
   color: #fff;
   background: linear-gradient(
     90deg,
-    rgba(255, 118, 20, 1) 0%,
-    rgba(255, 84, 17, 1) 100%
+    rgb(75, 192, 81) 0%,
+    rgb(36, 196, 44) 100%
   );
 
   padding: 16px;
